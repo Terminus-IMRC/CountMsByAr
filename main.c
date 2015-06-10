@@ -29,9 +29,9 @@ int main()
 
 	ms_counters(&cnt, M_LINEC, &st);
 	do {
-		ret = ms_bin_seq_read_next(ms, &mbr, &st);
 		int j;
 		int key = 0;
+		ret = ms_bin_seq_read_next(ms, &mbr, &st);
 		for (i = cnt.start, j = 0; i < cnt.end; i += cnt.step, j ++)
 			key += (ms[i] - 1) * ar_base[j];
 		printf("%d\n", key);
